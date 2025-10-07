@@ -1,60 +1,71 @@
+/* Import Google Font 'Poppins' for stylish and clean typography */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
 
+/* Reset default margin and padding for all elements and apply font globally */
 * {
   padding: 0;
   margin: 0;
-  font-family: "Poppins", sans-serif;
-  box-sizing: border-box;
+  font-family: "Poppins", sans-serif; /* Modern readable font */
+  box-sizing: border-box; /* Ensures padding and border are included in element width/height */
 }
 
+/* Set background gradient, text color, and disable horizontal scroll */
 body {
-  background: linear-gradient(135deg, #000000, #1a001a);
-  color: white;
-  overflow-x: hidden;
+  background: linear-gradient(135deg, #000000, #1a001a); /* Smooth black-purple gradient */
+  color: white; /* White text for contrast */
+  overflow-x: hidden; /* Prevents horizontal scrollbar */
 }
 
-/* Navbar */
+/* Navbar styling */
 nav {
   width: 100%;
   height: 10vh;
-  position: sticky;
+  position: sticky; /* Stays at top while scrolling */
   top: 0;
-  z-index: 100;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(6px);
+  z-index: 100; /* Keeps navbar above all elements */
+  background: rgba(0, 0, 0, 0.6); /* Transparent black background */
+  backdrop-filter: blur(6px); /* Adds glassy blur effect */
 }
 
+/* Navbar content container (logo + links) */
 .nav-container {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-around; /* Equal space between logo and links */
+  align-items: center; /* Vertically center items */
   height: 100%;
 }
 
+/* Logo styling */
 .logo {
   font-size: 2rem;
   font-weight: 700;
   color: white;
 }
 .logo span {
-  color: #ff66b2;
-  text-shadow: 0 0 10px #ff66b2;
+  color: #ff66b2; /* Pink color for highlighted part */
+  text-shadow: 0 0 10px #ff66b2; /* Neon glow effect */
 }
 
+/* Navigation links container */
 .links {
   display: flex;
-  gap: 2rem;
+  gap: 2rem; /* Space between links */
 }
+
+/* Navbar link style */
 .links a {
   text-decoration: none;
   color: white;
   font-weight: 500;
-  transition: 0.3s;
-}
-.links a:hover {
-  color: #ff66b2;
+  transition: 0.3s; /* Smooth color transition */
 }
 
+/* Hover effect on links */
+.links a:hover {
+  color: #ff66b2; /* Turns pink when hovered */
+}
+
+/* Hamburger and cancel icons for mobile view (hidden by default) */
 .hamburg,
 .cancel {
   display: none;
@@ -63,15 +74,18 @@ nav {
   color: white;
 }
 
+/* Dropdown menu (for mobile view) */
 .dropdown {
   z-index: 10;
   position: absolute;
   top: 0;
   width: 100%;
-  transform: translateY(-500px);
-  backdrop-filter: brightness(30%) blur(3px);
-  transition: 0.3s;
+  transform: translateY(-500px); /* Initially hidden above screen */
+  backdrop-filter: brightness(30%) blur(3px); /* Dark glassy background */
+  transition: 0.3s; /* Smooth dropdown animation */
 }
+
+/* Links inside mobile dropdown */
 .dropdown .links a {
   display: block;
   padding: 15px 0;
@@ -83,48 +97,58 @@ nav {
   color: black;
 }
 
-/* Hero */
+/* Hero Section: main part (profile image + text) */
 .main-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-evenly; /* Even spacing between image and text */
   align-items: center;
   height: 90vh;
 }
 
+/* Profile image styling */
 .image img {
   width: 300px;
   height: 300px;
-  border-radius: 50%;
-  border: 3px solid #ff66b2;
-  box-shadow: 0 0 20px #ff66b2;
-  object-fit: cover;
+  border-radius: 50%; /* Makes it circular */
+  border: 3px solid #ff66b2; /* Pink border */
+  box-shadow: 0 0 20px #ff66b2; /* Glowing border effect */
+  object-fit: cover; /* Keeps aspect ratio while filling circle */
 }
 
+/* Text content beside image */
 .content {
   width: 45%;
 }
 
+/* Main heading (name/introduction) */
 .content h1 {
   font-size: 2.5rem;
 }
 .content h1 span {
-  color: #ff66b2;
+  color: #ff66b2; /* Highlighted pink name */
 }
 
+/* Typewriter effect section */
 .typewriter {
   font-size: 1.5rem;
   font-weight: 600;
   margin: 10px 0;
 }
+
+/* Animated text color and glow */
 .typewriter span {
   color: #ff66b2;
   text-shadow: 0 0 8px #ff66b2;
   position: relative;
 }
+
+/* Text animation (changes words automatically) */
 .typewriter span::before {
   content: "Web Developer";
   animation: words 15s infinite;
 }
+
+/* Blinking cursor effect */
 .typewriter span::after {
   content: "";
   position: absolute;
@@ -133,11 +157,15 @@ nav {
   border-left: 3px solid #ff66b2;
   animation: cursor 0.7s linear infinite;
 }
+
+/* Cursor blinking animation */
 @keyframes cursor {
   to {
     border-left: 3px solid transparent;
   }
 }
+
+/* Text changing animation */
 @keyframes words {
   0%, 33% {
     content: "Web Developer";
@@ -145,16 +173,15 @@ nav {
   34%, 66% {
     content: "UI Designer";
   }
-  67%, 100% {
-    content: "MERN Stack Developer";
-  }
 }
 
+/* Paragraph text styling */
 p {
   line-height: 1.6;
   margin: 10px 0;
 }
 
+/* Social media icon buttons */
 .social-links i {
   margin: 10px;
   width: 45px;
@@ -167,12 +194,15 @@ p {
   color: #ff66b2;
   transition: 0.3s;
 }
+
+/* Hover animation for icons */
 .social-links i:hover {
   background: #ff66b2;
   color: black;
-  transform: scale(1.2);
+  transform: scale(1.2); /* Slight zoom */
 }
 
+/* Buttons (e.g., Resume, Hire Me) */
 button {
   background: #ff66b2;
   border: none;
@@ -183,6 +213,8 @@ button {
   cursor: pointer;
   transition: 0.3s;
 }
+
+/* Button hover animation */
 button:hover {
   background: transparent;
   border: 2px solid #ff66b2;
@@ -190,12 +222,13 @@ button:hover {
   box-shadow: 0 0 15px #ff66b2;
 }
 
-/* Sections */
+/* Section design (About, Skills, Projects, Contact) */
 section {
   padding: 60px 10%;
   text-align: center;
 }
 
+/* Background effect for each section */
 .about-section, .skills-section, .projects-section, .contact-section {
   background: rgba(255, 255, 255, 0.02);
   border-top: 1px solid #ff66b24d;
@@ -203,17 +236,20 @@ section {
   margin-top: 20px;
 }
 
+/* Section heading */
 h2 {
   color: #ff66b2;
   font-size: 2rem;
   margin-bottom: 20px;
 }
 
+/* Contact info icons (email, etc.) */
 .contact-info p i {
   color: #ff66b2;
   margin-right: 8px;
 }
 
+/* Skill tags */
 .skills-list span {
   border: 1px solid #ff66b2;
   padding: 8px 15px;
@@ -228,13 +264,15 @@ h2 {
   color: black;
 }
 
-/* Projects */
+/* Projects cards layout */
 .projects {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 }
+
+/* Individual project card design */
 .card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid #ff66b24d;
@@ -252,7 +290,7 @@ h2 {
   margin-bottom: 10px;
 }
 
-/* Footer */
+/* Footer design */
 footer {
   text-align: center;
   padding: 15px;
@@ -261,15 +299,16 @@ footer {
   font-size: 0.9rem;
 }
 
+/* Responsive design for mobile */
 @media (max-width: 884px) {
   .links {
-    display: none;
+    display: none; /* Hide nav links on small screens */
   }
   .hamburg {
-    display: block;
+    display: block; /* Show hamburger icon */
   }
   .main-container {
-    flex-direction: column;
+    flex-direction: column; /* Stack image and text vertically */
     text-align: center;
   }
   .content {
